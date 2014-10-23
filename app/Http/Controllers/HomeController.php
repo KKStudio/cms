@@ -21,8 +21,6 @@ class HomeController extends Controller {
 	public function index()
 	{
 		
-		$m = \App\Module::getInstance("TestModule");
-		return $m->test();
 
 	}
 

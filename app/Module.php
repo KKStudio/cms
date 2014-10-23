@@ -19,20 +19,14 @@ abstract class Module {
 
 		}
 
-		$class = '\App\\' . $name;
-
-		self::$instances[$name] = new $class;
+		self::$instances[$name] = new $name;
 
 		return self::$instances[$name];
 
 	}
 
-}
-
-class TestModule extends Module { 
-
-	public function test() {
-		return 'test';
+	public static function dump(){
+		var_dump(self::$instances);
 	}
 
 }
