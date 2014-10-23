@@ -20,7 +20,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('hello');
+		
+		$m = \App\Module::getInstance("TestModule");
+		return $m->test();
+
 	}
 
 }
