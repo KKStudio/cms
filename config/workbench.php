@@ -13,7 +13,7 @@ return [
 	|
 	*/
 
-	'name' => '',
+	'name' => 'kkstudio',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,6 +26,6 @@ return [
 	|
 	*/
 
-	'email' => '',
+	'email' => 'krzysztofbaczkiewicz@gmail.com',
 
 ];

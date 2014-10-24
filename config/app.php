@@ -127,7 +127,12 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-		'Kkstudio\Blog\BlogServiceProvider'
+
+		'Illuminate\Html\HtmlServiceProvider',
+
+		'Kkstudio\Blog\BlogServiceProvider',
+		'Kkstudio\Info\InfoServiceProvider',
+		'Kkstudio\Page\PageServiceProvider'
 
 	],
 
@@ -186,6 +191,9 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		'Form'		=> 'Illuminate\Html\FormFacade', 
+		'HTML'		=> 'Illuminate\Html\HtmlFacade',
 
 	],
 

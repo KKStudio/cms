@@ -11,8 +11,8 @@ abstract class Module {
 	*	@return Module
 	*/
 
-	public static function getInstance($name) {
-
+	public static function getInstance($name) 
+	{
 		if(isset(self::$instances[$name])) {
 
 			return self::$instances[$name];
@@ -22,11 +22,6 @@ abstract class Module {
 		self::$instances[$name] = new $name;
 
 		return self::$instances[$name];
-
-	}
-
-	public static function dump(){
-		var_dump(self::$instances);
 	}
 
 }

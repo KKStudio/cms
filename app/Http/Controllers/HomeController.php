@@ -5,12 +5,12 @@ use Illuminate\Routing\Controller;
 class HomeController extends Controller {
 
 	/**
-	 * @Get("/")
+	 * @Get("/", as="home")
 	 */
 	public function index()
-	{
-		
-		return themed('blog.index');
+	{		
+
+		return v('index');
 	}
 
 }

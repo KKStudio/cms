@@ -16,7 +16,7 @@ class User extends Model implements UserContract, CanResetPasswordContract {
 	 * @var string
 	 */
 	protected $table = 'users';
-
+	protected $guarded  = ['id'];
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
