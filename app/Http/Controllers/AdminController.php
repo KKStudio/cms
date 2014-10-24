@@ -2,6 +2,7 @@
 
 use Illuminate\Routing\Controller;
 use App\Http\Repositories\ModuleRepository;
+use App\Http\Repositories\VisitRepository;
 
 /**
  * @Controller(prefix="admin")
@@ -14,9 +15,9 @@ class AdminController extends Controller {
 	 * @Get("/")
 	 */
 
-	public function index() {
+	public function index(VisitRepository $visits) {
 
-		return view('admin.index');
+		return view('admin.index')->with('visits', $visits->count());
 
 	}
 
