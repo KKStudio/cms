@@ -984,13 +984,13 @@ body > .header .logo .icon {
   border-width: 10px;
   margin-left: -10px;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+ li.user-header {
   height: 175px;
   padding: 10px;
   background: #3cbc87;
   text-align: center;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
+ li.user-header > img {
   z-index: 5;
   height: 90px;
   width: 90px;
@@ -998,7 +998,7 @@ body > .header .logo .icon {
   border-color: transparent;
   border-color: rgba(255, 255, 255, 0.2);
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+ li.user-header > p {
   z-index: 5;
   color: #f9f9f9;
   color: rgba(255, 255, 255, 0.8);
@@ -1006,39 +1006,39 @@ body > .header .logo .icon {
   text-shadow: 2px 2px 3px #333333;
   margin-top: 10px;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p > small {
+ li.user-header > p > small {
   display: block;
   font-size: 12px;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-body {
+ li.user-body {
   padding: 15px;
   border-bottom: 1px solid #f4f4f4;
   border-top: 1px solid #dddddd;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-body:before,
-.navbar-nav > .user-menu > .dropdown-menu > li.user-body:after {
+ li.user-body:before,
+ li.user-body:after {
   display: table;
   content: " ";
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-body:after {
+ li.user-body:after {
   clear: both;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-body > div > a {
+ li.user-body > div > a {
   color: #0073b7;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-footer {
+ li.user-footer {
   background-color: #f9f9f9;
   padding: 10px;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-footer:before,
-.navbar-nav > .user-menu > .dropdown-menu > li.user-footer:after {
+ li.user-footer:before,
+ li.user-footer:after {
   display: table;
   content: " ";
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-footer:after {
+ li.user-footer:after {
   clear: both;
 }
-.navbar-nav > .user-menu > .dropdown-menu > li.user-footer .btn-default {
+ li.user-footer .btn-default {
   color: #666666;
 }
 /* Add fade animation to dropdown menus */
