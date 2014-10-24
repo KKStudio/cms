@@ -40,11 +40,12 @@
 
                     <div class="box box-solid">
                         <div class="box-header">
-                            <i class="fa fa-info"></i>
-                            <h3 class="box-title">About CMS</h3>
+                            <i class="fa fa-heart"></i>
+                            <h3 class="box-title">Welcome!</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
-                           <b>KK&nbsp;Studio&nbsp;CMS</b> is powered by <a href="http://laravel.com" target="__blank">Laravel</a> and was created for fast and easy deployment of simple websites. It comes with commonly used modules which makes it one of the quickest way to get fully featured website. KK&nbsp;Studio&nbsp;CMS is developed and maintained by <a href="http://krzysztof.be" target="__blank">Krzysztof&nbsp;Bączkiewicz</a>, creator of <a href="http://kkstudio.eu" target="__blank">KK&nbsp;Studio</a> web agency.
+                            Thank you for choosing <b>KK&nbsp;Studio&nbsp;CMS</b>! If you encounter any problems please contact us via <a href="mailto:kkstudio.contact@gmail.com" target="__blank">e-mail</a> or check our <a href="http://kkstudio.eu" target="__blank">website</a>.
+
                         </div><!-- /.box-body -->
                     </div>
 
@@ -54,7 +55,19 @@
 
 		    	<a class="twitter-timeline"  href="https://twitter.com/KKStudioCMS" data-widget-id="525701394041286656">Tweety na temat @KKStudioCMS</a>
             	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          
+            
+                <br> <br>
+
+                    <div class="box box-solid">
+                        <div class="box-header">
+                            <i class="fa fa-info"></i>
+                            <h3 class="box-title">About CMS</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                           <b>KK&nbsp;Studio&nbsp;CMS</b> is powered by <a href="http://laravel.com" target="__blank">Laravel</a> and was created for fast and easy deployment of simple websites. It comes with commonly used modules which makes it one of the quickest way to get fully featured website. KK&nbsp;Studio&nbsp;CMS is developed and maintained by <a href="http://krzysztof.be" target="__blank">Krzysztof&nbsp;Bączkiewicz</a>, creator of <a href="http://kkstudio.eu" target="__blank">KK&nbsp;Studio</a> web agency.
+                        </div><!-- /.box-body -->
+                    </div>
+
 		    </section>
 
 		    <section class="col-lg-4 ">

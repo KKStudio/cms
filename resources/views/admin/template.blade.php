@@ -104,6 +104,12 @@
                                 <i class="fa fa-cog"></i> <span>Settings</span>
                             </a>
                         </li>
+                    
+                        <li class="">
+                         <small style="text-align: right; padding: 3px 20px; display: block;">
+                                <i class="fa fa-v"></i> <span>v. 0.1.0</span>
+                          </small>
+                        </li>
                        
                     </ul>
                 </section>
