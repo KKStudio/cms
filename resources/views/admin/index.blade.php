@@ -64,7 +64,7 @@
                             <h3 class="box-title">About CMS</h3>
                         </div><!-- /.box-header -->
                         <div class="box-body">
-                           <b>KK&nbsp;Studio&nbsp;CMS</b> is powered by <a href="http://laravel.com" target="__blank">Laravel</a> and was created for fast and easy deployment of simple websites. It comes with commonly used modules which makes it one of the quickest way to get fully featured website. KK&nbsp;Studio&nbsp;CMS is developed and maintained by <a href="http://krzysztof.be" target="__blank">Krzysztof&nbsp;Bączkiewicz</a>, creator of <a href="http://kkstudio.eu" target="__blank">KK&nbsp;Studio</a> web agency.
+                           <b>KK&nbsp;Studio&nbsp;CMS</b> is powered by <a href="http://laravel.com" target="__blank">Laravel</a> and was created for fast and easy deployment of simple websites. It comes with commonly used modules which makes it one of the quickest way to get fully featured website. KK&nbsp;Studio&nbsp;CMS is developed and maintained by <a href="http://krzysztof.be" target="__blank">Krzysztof&nbsp;Bączkiewicz</a>, founder of <a href="http://kkstudio.eu" target="__blank">KK&nbsp;Studio</a> web agency.
                         </div><!-- /.box-body -->
                     </div>
 
