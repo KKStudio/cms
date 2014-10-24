@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use App\Http\Repositories\ModuleRepository;
 
 /**
  * @Controller(prefix="admin")
@@ -20,3 +21,11 @@ class AdminController extends Controller {
 	}
 
 }
+
+\View::composer('admin.template', function($view)
+{
+	$repo = new ModuleRepository;
+	$modules = $repo->all();
+
+    $view->with('modules', $modules);
+});

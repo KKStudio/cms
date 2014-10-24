@@ -14,7 +14,21 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->admin();
+	}
+
+	private function admin() 
+	{
+
+		\DB::table('kkstudio_users')->delete();
+
+		\App\User::create([
+
+			'email' => 'user@kkstudio.eu',
+			'password' => \Hash::make('password123')
+
+		]);
+
 	}
 
 }

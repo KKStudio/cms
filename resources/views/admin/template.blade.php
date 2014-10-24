@@ -24,8 +24,8 @@
     <body class="skin-blue">
 
         <header class="header">
-            <a href="index.html" class="logo">
-                KK CMS
+            <a href="{{ url('admin') }}" class="logo">
+                KK Studio CMS
             </a>
 
             <nav class="navbar navbar-static-top" role="navigation">
@@ -39,9 +39,9 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="glyphicon glyphicon-user"></i>
-                                <span>{{ Auth::user()->email }}</span>
+                            <a href="{{ url('auth/logout') }}">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                <span>Log out</span>
                             </a>
                         </li>
                     </ul>
@@ -74,6 +74,22 @@
                         <li class="">
                             <a href="{{ url('admin') }}">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        @foreach($modules as $module) 
+                    
+                            <li class="">
+                                <a href="{{ url('admin/' . $module->slug ) }}">
+                                    &nbsp;&nbsp;&nbsp;<i class="fa fa-{{ $module->icon }}"></i> <span>{{ $module->name }}</span>
+                                </a>
+                            </li>
+
+                        @endforeach
+                    
+                        <li class="">
+                            <a href="{{ url('settings') }}">
+                                <i class="fa fa-cog"></i> <span>Settings</span>
                             </a>
                         </li>
                        

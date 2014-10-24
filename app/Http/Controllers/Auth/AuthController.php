@@ -81,7 +81,7 @@ class AuthController extends Controller {
 	{
 		if ($this->auth->attempt($request->only('email', 'password')))
 		{
-			return redirect('/');
+			return \Redirect::intended();
 		}
 
 		return redirect('/auth/login')->withErrors([

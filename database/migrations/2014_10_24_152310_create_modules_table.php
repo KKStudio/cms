@@ -15,7 +15,9 @@ class CreateModulesTable extends Migration {
 		Schema::create('kkstudio_modules', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('slug');
 			$table->string('name');
+			$table->string('icon');
 			$table->string('description');
 			$table->enum('status', [ 'enabled', 'disabled' ]);
 			$table->text('settings');
