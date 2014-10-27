@@ -38,8 +38,14 @@ class RouteServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function before(Router $router)
-	{
-		//
+	{	
+		\View::composer('admin.template', function($view)
+		{
+			$repo = new \App\Http\Repositories\ModuleRepository;
+			$modules = $repo->all();
+
+		    $view->with('modules', $modules);
+		});
 	}
 
 	/**

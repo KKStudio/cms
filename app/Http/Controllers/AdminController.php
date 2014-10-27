@@ -22,11 +22,3 @@ class AdminController extends Controller {
 	}
 
 }
-
-\View::composer('admin.template', function($view)
-{
-	$repo = new ModuleRepository;
-	$modules = $repo->all();
-
-    $view->with('modules', $modules);
-});

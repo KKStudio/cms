@@ -1,156 +1,123 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>KK Studio CMS | Admin</title>
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <!-- Ionicons -->
-        <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-        <!-- Date Picker -->
-        <link href="{{ asset('css/datepicker/datepicker3.css') }}" rel="stylesheet" type="text/css" />
-           <!-- Morris chart -->
-        <link href="{{ asset('css/morris/morris.css') }}" rel="stylesheet" type="text/css" />
-        <!-- jvectormap -->
-        <link href="{{ asset('css/jvectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
-        <!-- Date Picker -->
-        <link href="{{ asset('css/datepicker/datepicker3.css') }}" rel="stylesheet" type="text/css" />
-        <!-- Daterange picker -->
-        <link href="{{ asset('css/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
-        <!-- bootstrap wysihtml5 - text editor -->
-        <link href="{{ asset('css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
-        <!-- Theme style -->
-        <link href="{{ asset('css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body class="skin-blue">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KK Studio CMS | Admin</title>
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jasny-bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
 
-        <header class="header">
+  <div id="wrapper">
+      
+      <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Menu</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
             <a href="{{ url('admin') }}" class="logo">
-                KK Studio CMS
+                <img src="{{ asset('logo.png') }}">
             </a>
+          </div>
 
-            <nav class="navbar navbar-static-top" role="navigation">
-
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="{{ url('/') }}" target="__blank">
+                        <i class="glyphicon glyphicon-globe"></i> <span>Preview</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="{{ url('admin/settings') }}">
+                  <i class="glyphicon glyphicon-cog"></i>&nbsp;Settings    
                 </a>
-                <div class="navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown user user-menu">
-                            <a href="{{ url('auth/logout') }}">
-                                <i class="glyphicon glyphicon-lock"></i>
-                                <span>Log out</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <div class="wrapper row-offcanvas row-offcanvas-left">
+              </li>
+              <li>
+                <a href="{{ url('auth/logout') }}">
+                  <i class="glyphicon glyphicon-off"></i>&nbsp;Log&nbsp;out    
+                </a>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
 
-            <aside class="left-side sidebar-offcanvas">
+      <div class="clearfix"></div>
 
-                <section class="sidebar">
+      <div class="row">
 
-                    <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search modules..."/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
+        <div class="col-sm-3 col-md-3 col-lg-2" id="sidebar">
 
-                    <ul class="sidebar-menu">
+          <h4>Modules</h4>
+
+          @if(!count($modules))
+
+          <small>No modules available. Check our store for new ones.</small>
+
+          @else
+
+          <ul class="list-group">
+
+            @foreach($modules as $module) 
                     
-                        <li class="">
-                            <a href="{{ url('/') }}" target="__blank">
-                                <i class="fa fa-globe"></i> <span>Preview</span>
-                            </a>
-                        </li>
-                    
-                        <li class="">
-                            <a href="{{ url('admin') }}">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                            </a>
-                        </li>
+                <li class="list-group-item">
+                    <a href="{{ url('admin/' . $module->slug ) }}">
+                        &nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-{{ $module->icon }}"></i> <span>{{ $module->name }}</span>
+                    </a>
+                </li>
 
-                        @foreach($modules as $module) 
-                    
-                            <li class="">
-                                <a href="{{ url('admin/' . $module->slug ) }}">
-                                    &nbsp;&nbsp;&nbsp;<i class="fa fa-{{ $module->icon }}"></i> <span>{{ $module->name }}</span>
-                                </a>
-                            </li>
+            @endforeach
 
-                        @endforeach
-                    
-                        <li class="">
-                            <a href="{{ url('admin/themes') }}">
-                                <i class="fa fa-image"></i> <span>Themes</span>
-                            </a>
-                        </li>
-                    
-                        <li class="">
-                            <a href="{{ url('admin/settings') }}">
-                                <i class="fa fa-cog"></i> <span>Settings</span>
-                            </a>
-                        </li>
-                    
-                        <li class="">
-                         <small style="text-align: right; padding: 3px 20px; display: block;">
-                                <i class="fa fa-v"></i> <span>v. 0.1.0</span>
-                          </small>
-                        </li>
-                       
-                    </ul>
-                </section>
+          </ul>
 
-            </aside>
+          @endif
 
+          <a href="http://shop.kkstudio.eu" target="__blank" class="btn btn-lg btn-success">
 
-            <aside class="right-side">
+            <i class="glyphicon glyphicon-shopping-cart"></i> 
+            
+            More
 
-                @yield('content')
-                
-            </aside><!-- /.right-side -->
+          </a>
 
-        </div><!-- ./wrapper -->
+          <br><br>
 
+        </div>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js" type="text/javascript"></script>
-        <!-- Morris.js charts -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="{{ asset('js/plugins/morris/morris.min.js') }}" type="text/javascript"></script>
-    <!-- Sparkline -->
-        <script src="{{ asset('js/plugins/sparkline/jquery.sparkline.min.js') }}" type="text/javascript"></script>
-        <!-- jvectormap -->
-        <script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}" type="text/javascript"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="{{ asset('js/plugins/jqueryKnob/jquery.knob.js') }}" type="text/javascript"></script>
-        <!-- daterangepicker -->
-        <script src="{{ asset('js/plugins/daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
-        <!-- datepicker -->
-        <script src="{{ asset('js/plugins/datepicker/bootstrap-datepicker.js') }}" type="text/javascript"></script>
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="{{ asset('js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}" type="text/javascript"></script>
-        <!-- iCheck -->
-        <script src="{{ asset('js/plugins/iCheck/icheck.min.js') }}" type="text/javascript"></script>
-        <!-- AdminLTE App -->
-        <script src="{{ asset('js/AdminLTE/app.js') }}" type="text/javascript"></script>
+        <div class="col-sm-9 col-md-9 col-lg-10">
 
-        @yield('scripts')
+          @include('flash::message')
 
-    </body>
+            <section class="content">
+
+            @yield('content')
+
+                <div class="clearfix"></div>
+
+            </section>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jasny-bootstrap.min.js') }}"></script>
+    @yield('scripts')
+  </body>
 </html>

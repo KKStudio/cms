@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>STANLEY - Free Bootstrap Theme </title>
+    <title>{{ m('Info')->title() }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ a('css/bootstrap.css') }}" rel="stylesheet">
@@ -57,7 +57,9 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 centered">
-					<img src="{{ a('img/user.png') }}" alt="Stanley">
+
+					<img src="{{ m('Info')->getAvatar() }}" class="img-circle">
+		
 					<h1>{{  m('Info')->header() }}</h1>
 					<p>{{  m('Info')->about() }}</p>					
 				</div><!-- /col-lg-8 -->

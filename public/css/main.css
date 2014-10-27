@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,400italic,500italic,700,700italic,900,900italic&subset=latin,latin-ext);
+
+body {
+	background: #333;
+	padding: 0;
+	margin: 0;
+	padding-bottom: 20px;
+	font-family: Roboto;
+	font-size: 1.6em;
+}
+
+a {
+	color: #fff;
+}
+
+.navbar {
+	min-height: 100px;
+	padding: 0 20px;
+	background: #31B399;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #31B399;
+	color: #fff;
+}
+
+.navbar img {
+	height: 100px;
+	width: auto;
+	padding: 20px 20px;
+}
+
+.navbar-brand {
+}
+
+.navbar-collapse {
+	margin-top: 0px;
+}
+
+.navbar ul {
+	margin-top: 25px;
+}
+
+.row {
+	margin: 0px;
+}
+
+.list-group {
+}
+
+.list-group li {
+	background: #333;
+	border: none;
+}
+
+.list-group a:hover {
+	text-decoration: none;
+	color: #aaa;
+}
+
+.list-group li  {
+	color: #fff;
+}
+
+.content {
+	background: white;
+	border-radius: 5px;
+	padding: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #555;
+}
+
+@media(max-width:899px) {
+
+	#sidebar {
+		text-align: center;
+	}
+
+}
+
+@media(min-width:900px) {
+
+	#sidebar {
+		text-align: right;
+	}
+
+}

@@ -15,23 +15,30 @@ class VisitorLogger implements Middleware {
 	public function handle($request, Closure $next)
 	{
 
+
+		return $next($request);
+
 		$ip = \Request::getClientIp();
 		$url = \Request::url();
 		$referer = \Request::header('referer');
 		$abbr = 'XX';
 
-		$data = json_decode( file_get_contents('http://ip-api.com/json/' . $ip), true );
+		try {
 
-		if(isset($data['countryCode'])) $abbr = $data['countryCode'];
+			$data = json_decode( file_get_contents('http://ip-api.com/json/' . $ip), true );
 
-		\App\Visit::create([
+			if(isset($data['countryCode'])) $abbr = $data['countryCode'];
 
-			'ip_address' => $ip,
-			'url' => $url,
-			'referer' => $referer,
-			'abbr' => $abbr
+			\App\Visit::create([
 
-		]);
+				'ip_address' => $ip,
+				'url' => $url,
+				'referer' => $referer,
+				'abbr' => $abbr
+
+			]);
+
+		} catch(Exception $e) { }
 
 
 		return $next($request);

@@ -129,10 +129,12 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 
 		'Illuminate\Html\HtmlServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 
-		'Kkstudio\Blog\BlogServiceProvider',
 		'Kkstudio\Info\InfoServiceProvider',
-		'Kkstudio\Page\PageServiceProvider'
+		'Kkstudio\Page\PageServiceProvider',
+		'Kkstudio\Menu\MenuServiceProvider',
 
 	],
 
@@ -194,6 +196,9 @@ return [
 
 		'Form'		=> 'Illuminate\Html\FormFacade', 
 		'HTML'		=> 'Illuminate\Html\HtmlFacade',
+		'Flash' 	=> 'Laracasts\Flash\Flash',
+        'Str' 		=> 'Illuminate\Support\Str',        
+        'Image' 	=> 'Intervention\Image\Facades\Image',
 
 	],
 
