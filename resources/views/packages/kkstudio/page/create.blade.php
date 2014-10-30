@@ -10,6 +10,8 @@
 
 @section('content')
 
+	<h3 class="pull-left">Create page</h3>
+
 	<div class=""> 
 
 		{!! Form::open([ 'url' => 'admin/page/create']) !!}

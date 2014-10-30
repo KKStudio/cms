@@ -11,7 +11,9 @@
 		"laracasts/flash": "~1.0",
 		"kkstudio/info": "dev-master",
 		"kkstudio/page": "dev-master",
-		"kkstudio/menu": "dev-master"
+		"kkstudio/menu": "dev-master",
+		"kkstudio/blog": "dev-master",
+		"kkstudio/portfolio": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0"

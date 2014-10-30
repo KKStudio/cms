@@ -61,15 +61,26 @@
 
         <div class="col-sm-3 col-md-3 col-lg-2" id="sidebar">
 
-          <h4>Modules</h4>
-
           @if(!count($modules))
 
           <small>No modules available. Check our store for new ones.</small>
 
           @else
 
-          <ul class="list-group">
+          <button type="button" class="hidden-sm hidden-md hidden-lg btn btn-warning collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+             Toggle module list
+          </button>
+
+          <div class="clearfix"></div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class=" list-group ">
+                    
+                <li class="list-group-item">
+
+                  <h4>Modules</h4>
+                    
+                </li>
 
             @foreach($modules as $module) 
                     
@@ -80,18 +91,18 @@
                 </li>
 
             @endforeach
+                    
+                <li class="list-group-item">
+                    <a href="http://shop.kkstudio.eu" target="__blank" class="btn btn-lg btn-success">
+                       <i class="glyphicon glyphicon-shopping-cart"></i> 
+                        More
+                    </a>
+                </li>
 
           </ul>
+          </div>
 
           @endif
-
-          <a href="http://shop.kkstudio.eu" target="__blank" class="btn btn-lg btn-success">
-
-            <i class="glyphicon glyphicon-shopping-cart"></i> 
-            
-            More
-
-          </a>
 
           <br><br>
 

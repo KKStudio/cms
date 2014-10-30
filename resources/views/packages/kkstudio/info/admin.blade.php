@@ -1,13 +1,5 @@
 @extends('admin.template')
 
-@section('header')
-    Info
-@stop
-
-@section('small')
-    information about You and your company
-@stop
-
 @section('content')
 
 	<div class=""> 
@@ -21,8 +13,6 @@
 		{!! Form::submit('Save changes', [ 'class' => 'btn btn-lg btn-primary pull-right']) !!}
 
 		<div class="clearfix"></div>
-
-		<br><br>
 
 		<h3>{!! Form::label('avatar', 'Avatar') !!}</h3>
 
@@ -41,6 +31,11 @@
 		  </div>
 		</div>
 		
+
+		<h3>{!! Form::label('name', 'Name') !!}</h3>
+
+		{!! Form::textarea('name', module('Info')->name(), [ 'class' => 'form-control input-lg', 'rows' => 1 ]) !!}
+
 
 		<h3>{!! Form::label('header', 'Header text') !!}</h3>
 

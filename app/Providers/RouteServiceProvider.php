@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider {
 		'auth.basic' => 'App\Http\Middleware\AuthenticatedWithBasicAuth',
 		'csrf' => 'App\Http\Middleware\CsrfTokenIsValid',
 		'guest' => 'App\Http\Middleware\IsGuest',
+		'admin' => 'App\Http\Middleware\AdminMiddleware',
 	];
 
 	/**
@@ -39,6 +40,12 @@ class RouteServiceProvider extends ServiceProvider {
 	 */
 	public function before(Router $router)
 	{	
+
+		$router->get('admin', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\AdminController@index'
+		]);
+
 		\View::composer('admin.template', function($view)
 		{
 			$repo = new \App\Http\Repositories\ModuleRepository;

@@ -6,14 +6,10 @@ use App\Http\Repositories\VisitRepository;
 
 /**
  * @Controller(prefix="admin")
- * @Middleware("auth")
+ * @Middleware("admin")
  */
 
 class AdminController extends Controller {
-
-	/**
-	 * @Get("/")
-	 */
 
 	public function index(VisitRepository $visits) {
 

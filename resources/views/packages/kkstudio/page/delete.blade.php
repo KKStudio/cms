@@ -2,6 +2,8 @@
 
 @section('content')
 
+	<h3 class="pull-left">Delete page</h3>
+
 	<div class=""> 
 
 		{!! Form::open([ 'url' => 'admin/page/' . $page->slug . '/delete']) !!}

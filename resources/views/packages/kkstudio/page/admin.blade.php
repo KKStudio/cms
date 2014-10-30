@@ -10,6 +10,8 @@
 
 @section('content')
 
+	<h3 class="pull-left">Pages</h3>
+
 	<div class=""> 
 
 		<a href="{{ url('admin/page/create') }}" class="btn btn-lg btn-success pull-right">
@@ -41,20 +43,15 @@
 						<a href="{{ url('admin/page/' . $page->slug . '/delete') }}" class="btn btn-sm btn-danger">delete</a>
 					</td>
 					<td>
-						@if(m('Menu')->{$page->slug}())
-
-						@else
 						{!! Form::open([ 'url' => 'admin/menu/create']) !!}
 
 							{!! Form::hidden('display_name', $page->name) !!}
 							{!! Form::hidden('route', '{$slug}') !!}
-							{!! Form::hidden('params', json_encode(['slug' => 'test'])) !!}
+							{!! Form::hidden('params', json_encode(['slug' => $page->slug])) !!}
 
 							{!! Form::submit('add to menu', [ 'class' => 'btn btn-sm btn-warning']) !!}
 
 						{!! Form::close() !!}
-
-						@endif
 					</td>
 				</tr>
 				@endforeach

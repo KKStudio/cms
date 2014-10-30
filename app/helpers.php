@@ -51,9 +51,9 @@ function a($asset)
  * @return String
  */
 
-function v($name) 
+function v($name, $vars = []) 
 {
-	return view(themed($name));
+	return view(themed($name), $vars);
 }
 
 /**

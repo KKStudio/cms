@@ -133,8 +133,10 @@ return [
 		'Intervention\Image\ImageServiceProvider',
 
 		'Kkstudio\Info\InfoServiceProvider',
-		'Kkstudio\Page\PageServiceProvider',
 		'Kkstudio\Menu\MenuServiceProvider',
+		'Kkstudio\Portfolio\PortfolioServiceProvider',
+		'Kkstudio\Blog\BlogServiceProvider',
+		'Kkstudio\Page\PageServiceProvider',
 
 	],
 

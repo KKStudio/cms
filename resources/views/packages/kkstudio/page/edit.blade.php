@@ -1,14 +1,8 @@
 @extends('admin.template')
 
-@section('header')
-    Info
-@stop
-
-@section('small')
-    information about You and your company
-@stop
-
 @section('content')
+
+	<h3 class="pull-left">Edit page</h3>
 
 	<div class=""> 
 
