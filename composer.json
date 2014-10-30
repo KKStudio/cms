@@ -13,6 +13,7 @@
 		"kkstudio/page": "dev-master",
 		"kkstudio/menu": "dev-master",
 		"kkstudio/blog": "dev-master",
+		"kkstudio/gallery": "dev-master",
 		"kkstudio/portfolio": "dev-master"
 	},
 	"require-dev": {

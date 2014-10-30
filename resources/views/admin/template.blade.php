@@ -86,7 +86,8 @@
                     
                 <li class="list-group-item">
                     <a href="{{ url('admin/' . $module->slug ) }}">
-                        &nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-{{ $module->icon }}"></i> <span>{{ $module->name }}</span>
+                      <span>{{ $module->name }}</span>
+                        &nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-{{ $module->icon }}"></i>
                     </a>
                 </li>
 

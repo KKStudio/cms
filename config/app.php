@@ -136,6 +136,7 @@ return [
 		'Kkstudio\Menu\MenuServiceProvider',
 		'Kkstudio\Portfolio\PortfolioServiceProvider',
 		'Kkstudio\Blog\BlogServiceProvider',
+		'Kkstudio\Gallery\GalleryServiceProvider',
 		'Kkstudio\Page\PageServiceProvider',
 
 	],
