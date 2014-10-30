@@ -14,6 +14,10 @@
 
 	<div class=""> 
 
+		<a href="{{ url('admin/page/settings') }}" class="btn btn-default btn-lg pull-right" style="margin-left: 10px;">
+			<i class="glyphicon glyphicon-cog"></i>
+		</a>
+
 		<a href="{{ url('admin/page/create') }}" class="btn btn-lg btn-success pull-right">
 			Create new page
 		</a>

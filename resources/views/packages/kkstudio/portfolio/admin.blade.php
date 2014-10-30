@@ -6,6 +6,10 @@
 
 	<div class=""> 
 
+		<a href="{{ url('admin/portfolio/settings') }}" class="btn btn-default btn-lg pull-right" style="margin-left: 10px;">
+			<i class="glyphicon glyphicon-cog"></i>
+		</a>
+
 		<a href="{{ url('admin/portfolio/create') }}" style="margin-left: 10px;" class="btn btn-lg btn-success pull-right">
 			Create new project
 		</a>
@@ -31,6 +35,7 @@
 				<th></th>
 				<th>up</th>
 				<th>down</th>
+				<th></th>
 			</thead>
 			<tbody>
 				@foreach($portfolio as $k => $project)
@@ -66,6 +71,21 @@
 
 						{!! Form::close() !!}
 						@endif
+
+					</td>
+					<td>
+
+
+						{!! Form::open([ 'url' => 'admin/menu/create']) !!}
+
+							{!! Form::hidden('display_name', $project->name) !!}
+							{!! Form::hidden('route', 'portfolio/{$slug}') !!}
+							{!! Form::hidden('params', json_encode(['slug' => $project->slug])) !!}
+
+							{!! Form::submit('Add to menu', [ 'class' => 'pull-right btn btn-sm btn-warning']) !!}
+
+						{!! Form::close() !!}
+
 
 					</td>
 				</tr>

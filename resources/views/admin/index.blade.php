@@ -1,13 +1,5 @@
 @extends('admin.template')
 
-@section('header')
-    Dashboard
-@stop
-
-@section('small')
-    Control panel
-@stop
-
 @section('content')
 
     <div class="row">

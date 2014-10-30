@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 	<div class="container pt">
 
 	{{ var_dump($posts) }}

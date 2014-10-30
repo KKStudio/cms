@@ -46,6 +46,26 @@ class RouteServiceProvider extends ServiceProvider {
 			'uses' => 'App\Http\Controllers\AdminController@index'
 		]);
 
+		$router->get('admin/settings', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\SettingsController@index'
+		]);
+
+		$router->post('admin/settings', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\SettingsController@update'
+		]);
+
+		$router->get('admin/{module}/settings', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\SettingsController@module'
+		]);
+
+		$router->post('admin/{module}/settings', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\SettingsController@moduleUpdate'
+		]);
+
 		\View::composer('admin.template', function($view)
 		{
 			$repo = new \App\Http\Repositories\ModuleRepository;
