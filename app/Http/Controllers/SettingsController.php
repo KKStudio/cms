@@ -13,11 +13,9 @@ class SettingsController extends Controller {
 
 	public function update() {
 
-		$fields = [ 'test' ];
+		$fields = \Request::except('_token');
 
-		foreach($fields as $field) {
-
-			if(!\Request::get($field)) continue;
+		foreach($fields as $field => $value) {
 
 			if(Settings::value($field)) {
 

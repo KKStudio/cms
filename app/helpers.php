@@ -93,7 +93,27 @@ function home()
 
 function theme() 
 {
-	$theme = 'default';
+	$theme = s('theme', 'default');
 
 	return $theme;
+}
+
+/**
+ * global settings
+ * @return String
+ */
+
+function s($key, $default = '')
+{
+	return \App\Settings::value($key, $default);
+}
+
+/**
+ * translation facade
+ * @return String
+ */
+
+function tr($key)
+{
+	return trans($key);
 }

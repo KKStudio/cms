@@ -16,11 +16,11 @@ a {
 .navbar {
 	min-height: 100px;
 	padding: 0 20px;
-	background: #31B399;
+	background: #158CBA;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-	color: #31B399;
+	color: #158CBA;
 	color: #fff;
 }
 
@@ -86,4 +86,13 @@ h1, h2, h3, h4, h5, h6 {
 		text-align: right;
 	}
 
+}
+
+.navbar {
+	border: none;
+	border-bottom: 4px solid #127BA3;
+}
+
+.content p a {
+	color: #158CBA;
 }

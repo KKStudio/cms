@@ -66,6 +66,16 @@ class RouteServiceProvider extends ServiceProvider {
 			'uses' => 'App\Http\Controllers\SettingsController@moduleUpdate'
 		]);
 
+		$router->get('admin/themes', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\ThemeController@themes'
+		]);
+
+		$router->post('admin/themes/change', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\ThemeController@changeTheme'
+		]);
+
 		\View::composer('admin.template', function($view)
 		{
 			$repo = new \App\Http\Repositories\ModuleRepository;

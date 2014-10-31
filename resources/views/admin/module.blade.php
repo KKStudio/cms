@@ -22,6 +22,13 @@
 
 		@endforeach
 
+		@if(!count(m($module)->settings ))
+
+			<p class="text-muted">
+				No settings can be changed.
+			</p>
+
+		@endif
 
 	{!! Form::close() !!}
 
