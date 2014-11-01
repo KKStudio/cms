@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h3>Global settings</h3>
+	<h3 class="pull-left">Global settings</h3>
 
 	<div class=""> 
 
@@ -10,7 +10,10 @@
 
 		{!! Form::submit('Save changes', [ 'class' => 'btn btn-lg btn-primary pull-right']) !!}
 
+
 		<div class="clearfix"></div>
+
+		<hr>
 
 	
 		<h3>{!! Form::label('language', 'Admin panel language') !!}</h3>

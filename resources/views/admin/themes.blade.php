@@ -2,7 +2,11 @@
 
 @section('content')
 
-	<h3>Themes available</h3>
+	<h3 class="pull-left">Themes available</h3>
+
+	<a href="{{ url('install') }}" class="btn btn-lg pull-right btn-success">Install new theme</a>
+
+	<div class="clearfix"></div>
 
 	<hr>
 
@@ -12,9 +16,13 @@
 
 		<div class="col-sm-6 col-md-4 col-lg-3">
 
-		<img src="{{ asset('themes/' . $theme->slug . '/theme.png') }}" class="img-thumbnail"> 
+		<a href="{{ url('admin/theme/' . $theme->slug) }}">
 
-		<h5>{{ $theme->name }}</h5>
+			<img src="{{ asset('themes/' . $theme->slug . '/theme.png') }}" class="img-thumbnail"  style="width: 100%; height: auto;"> 
+
+			<h5>{{ $theme->name }}</h5>
+
+		</a>
 
 		{!! Form::open([ 'url' => 'admin/themes/change']) !!}
 
@@ -31,6 +39,10 @@
 				{!! Form::submit('select theme', [ 'class' => 'btn btn-primary']) !!}
 
 			@endif
+
+			<a href="{{ url('admin/theme/' . $theme->slug) }}" class="btn btn-default pull-right">
+				<i class="glyphicon glyphicon-cog"></i>
+			</a> 
 
 		{!! Form::close() !!}
 

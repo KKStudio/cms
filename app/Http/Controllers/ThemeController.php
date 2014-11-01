@@ -23,7 +23,22 @@ class ThemeController extends Controller {
 	{
 		$theme =  $this->repo->get($slug);
 
-		return \View::make('admin.theme')->with('theme', $themes);
+		return \View::make('admin.theme')->with('theme', $theme);
+
+	}
+
+	public function customize($slug) 
+	{
+		$theme =  $this->repo->get($slug);
+
+		$data = \Request::except('_token');
+
+		$theme->colors = json_encode($data);
+		$theme->save();
+
+		\Flash::success('Theme has been edited.');
+
+		return \Redirect::back();
 
 	}
 

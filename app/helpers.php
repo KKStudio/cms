@@ -117,3 +117,15 @@ function tr($key)
 {
 	return trans($key);
 }
+
+/**
+ * returns class "active" if route starts with $route
+ * @return String
+ */
+
+function is_active($route)
+{
+	if(\Request::is($route)) return ' active ';
+	return ' ';
+}
+

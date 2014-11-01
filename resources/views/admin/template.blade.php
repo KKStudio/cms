@@ -7,6 +7,8 @@
     <title>KK Studio CMS | Admin</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/jasny-bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-colorpicker.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/docs.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -30,30 +32,25 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="">
-                    <a href="{{ url('/') }}" target="__blank">
-                        <i class="glyphicon glyphicon-"></i> <span>Admin</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="{{ url('/') }}" target="__blank">
-                        <i class="glyphicon glyphicon-globe"></i> <span>Preview</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                  <a href="{{ url('/') }}" target="__blank" class="btn">
+                      <i class="glyphicon glyphicon-globe"></i> <span>Preview</span>
+                  </a>
+              </li>
               <li>
-                <a href="{{ url('admin/themes') }}">
+                <a href="{{ url('admin/themes') }}" class="btn">
                   <i class="glyphicon glyphicon-eye-open"></i>&nbsp;Change theme    
                 </a>
               </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
               <li>
-                <a href="{{ url('admin/settings') }}">
+                <a href="{{ url('admin/settings') }}" class="btn">
                   <i class="glyphicon glyphicon-cog"></i>&nbsp;Settings    
                 </a>
               </li>
               <li>
-                <a href="{{ url('auth/logout') }}">
+                <a href="{{ url('auth/logout') }}" class="btn">
                   <i class="glyphicon glyphicon-off"></i>&nbsp;Log&nbsp;out    
                 </a>
               </li>
@@ -81,7 +78,7 @@
           <div class="clearfix"></div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-            <ul class=" list-group ">
+            <ul class=" list-group  ">
                     
                 <li class="list-group-item">
 
@@ -89,10 +86,10 @@
                     
                 </li>
 
-            @foreach($modules as $module) 
+            @foreach($modules as $module)
                     
-                <li class="list-group-item">
-                    <a href="{{ url('admin/' . $module->slug ) }}">
+                <li class="{{ is_active('admin/' . $module->slug .'*') }}">
+                    <a href="{{ url('admin/' . $module->slug ) }}" class="list-group-item">
                       <span>{{ $module->name }}</span>
                         &nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-{{ $module->icon }}"></i>
                     </a>
@@ -101,7 +98,7 @@
             @endforeach
                     
                 <li class="list-group-item">
-                    <a href="http://shop.kkstudio.eu" target="__blank" class="btn btn-lg btn-success">
+                    <a href="http://shop.kkstudio.eu" target="__blank" class="btn btn-lg btn-primary">
                        <i class="glyphicon glyphicon-shopping-cart"></i> 
                         More
                     </a>
@@ -138,6 +135,17 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/jasny-bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('js/docs.js') }}"></script>
+
+   <script>
+      $(function(){
+          $('.color').colorpicker();
+      });
+  </script>
+            
+
+
     <script type="text/javascript">
     tinymce.init({
         selector: ".editor",

@@ -71,9 +71,19 @@ class RouteServiceProvider extends ServiceProvider {
 			'uses' => 'App\Http\Controllers\ThemeController@themes'
 		]);
 
+		$router->get('admin/theme/{slug}', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\ThemeController@theme'
+		]);
+
 		$router->post('admin/themes/change', [
 			'middleware' => 'admin',
 			'uses' => 'App\Http\Controllers\ThemeController@changeTheme'
+		]);
+
+		$router->post('admin/theme/{slug}/customize', [
+			'middleware' => 'admin',
+			'uses' => 'App\Http\Controllers\ThemeController@customize'
 		]);
 
 		\View::composer('admin.template', function($view)

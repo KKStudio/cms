@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 14px;
 }
 
-.list-group .active a 	{
+.list-group .active a {
 	background: #eee;
 	border-radius: 5px;
 	color: #666 !important;
