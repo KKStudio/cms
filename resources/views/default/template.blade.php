@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ a('css/main.css') }}" rel="stylesheet">
+    <link href="{{ a('css/config.css') }}" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{{ a('js/hover.zoom.js') }}"></script>

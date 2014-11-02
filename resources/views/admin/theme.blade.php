@@ -52,6 +52,8 @@
 
 		<h3 class="pull-left">Theme customization</h3>
 
+		@if(count(json_decode($theme->colors, true)))
+
 		{!! Form::open(['url' => 'admin/theme/' . $theme->slug . '/customize']) !!}
 
 		{!! Form::submit('save changes', [ 'class' => 'btn btn-lg btn-primary pull-right'])!!}
@@ -69,6 +71,18 @@
 		@endforeach
 
 		{!! Form::close() !!}
+
+		@else
+		<div class="clearfix"></div> 
+		<br>
+
+			<p class="text-muted">
+
+			This theme cannot be customized.
+
+			</p>
+
+		@endif
 
 	</div>
 

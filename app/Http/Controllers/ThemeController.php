@@ -36,6 +36,33 @@ class ThemeController extends Controller {
 		$theme->colors = json_encode($data);
 		$theme->save();
 
+		$config_path = public_path('themes/' . $slug . '/css/config-template.css');
+
+		try
+		{
+		    $contents = \File::get($config_path);
+
+		    foreach($data as $field => $value) {
+
+		    	$contents = str_replace('{$' . $field . '}', $value, $contents);
+
+		    }
+
+			$path = public_path('themes/' . $slug . '/css/config.css');
+
+			$random_name = \Str::random(40);
+			$random_file = public_path('themes/' . $slug . '/css/config/'.$random_name.'.css');
+
+			\File::put($random_file, $contents);
+			\File::put($path, "@import url('config/$random_name.css');");
+
+
+		}
+		catch (Illuminate\Filesystem\FileNotFoundException $e)
+		{
+		   
+		}
+
 		\Flash::success('Theme has been edited.');
 
 		return \Redirect::back();
