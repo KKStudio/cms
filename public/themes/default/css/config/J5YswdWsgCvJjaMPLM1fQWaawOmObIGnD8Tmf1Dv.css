@@ -1,0 +1,7 @@
+body {
+	background-color: {$background};
+}
+
+.navbar {
+	background-color: #ad0000;
+}

@@ -1,0 +1,7 @@
+body {
+	background-color: {$background};
+}
+
+.navbar {
+	background-color: #22ab72;
+}
